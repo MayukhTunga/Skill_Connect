@@ -22,10 +22,10 @@ export default function Banner() {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full h-96 overflow-hidden">
+    <div className="relative flex rounded-lg items-center justify-center w-full h-96 ">
       <button
         onClick={prevImage}
-        className="absolute left-0 top-1/2 font-bold bg-slate-900  text-white px-4 py-2  mx-4"
+        className="left-0 top-1/2 font-bold bg-slate-900  text-white px-4 py-2  mx-4"
       >
         {'<'}
       </button>
@@ -35,13 +35,12 @@ export default function Banner() {
           alt={`Banner ${currentIndex + 1}`}
           layout="fill"
           objectFit="cover"
-          priority
           className='rounded-lg'
         />
       </div>
       <button
         onClick={nextImage}
-        className="absolute right-0 top-1/2 font-bold bg-slate-900  text-white px-4 py-2  mx-4"
+        className="right-0 top-1/2 font-bold bg-slate-900  text-white px-4 py-2  mx-4"
       >
         {'>'}
       </button>

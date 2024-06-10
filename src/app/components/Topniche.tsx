@@ -9,7 +9,7 @@ export default function Topniche() {
 
     return (
         <div>
-            <div className="flex items-start justify-center ">
+            <div className="flex items-start justify-center">
                 {niches.map((niche, index) => (
                     <div key={index} className="bg-slate-600 rounded-lg px-12 py-4 mx-4 my-2">
                         <div className="text-white font-bold text-2xl">{niche.title}</div>
