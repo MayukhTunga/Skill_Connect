@@ -1,19 +1,21 @@
 "use client"
 import { useState } from "react"
 import { FaRegEnvelope } from "react-icons/fa"
+import {MdPerson} from "react-icons/md"
 import { MdLockOutline } from "react-icons/md"
 import Link from "next/link"
 
-const LoginForm = () => {
-
+const SignupForm = () => {
+    const [firstName,setFirstName] = useState("");
+    const [lastName,setLastName] = useState("");
     const [email,setEmail] = useState(""); 
     const [password, setPassword] = useState(""); 
-    const [loginData, setLoginData] = useState({});
+    const [signUpData, setSignupData] = useState({});
     const formSubmit = (e: any) => {
         e.preventDefault()
-        const information = {email: email, password: password}
-        setLoginData(information)
-        //console.log(information)
+        const information = {firstName: firstName, lastName: lastName, email: email, password: password}
+        setSignupData(information)
+        console.log(information)
     }
     return (
         <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -23,10 +25,30 @@ const LoginForm = () => {
                         Skill <span className="text-violet-700">Connect</span>
                     </div>
                     <div className="py-10">
-                        <h2 className="text-3xl font-bold text-violet-700 mb-2">Log in to account</h2>
+                        <h2 className="text-3xl font-bold text-violet-700 mb-2">Enter your details</h2>
                         <div className="border-2 w-10 border-violet-700 inline-block mb-10"></div>
                         <div className="flex flex-col items-center">
                             <form action="" onSubmit={formSubmit}>
+                                <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-5">
+                                    <MdPerson className="text-gray-400 m-2"/>
+                                    <input 
+                                        type="string" 
+                                        name="firstname" 
+                                        placeholder="First Name" 
+                                        className="bg-gray-100 outline-none text-sm flex-1"
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                    />
+                                </div>
+                                <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-5">
+                                    <MdPerson className="text-gray-400 m-2"/>
+                                    <input 
+                                        type="string" 
+                                        name="lastname" 
+                                        placeholder="Last Name" 
+                                        className="bg-gray-100 outline-none text-sm flex-1"
+                                        onChange={(e) => setLastName(e.target.value)}
+                                    />
+                                </div>
                                 <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-5">
                                     <FaRegEnvelope className="text-gray-400 m-2"/>
                                     <input 
@@ -47,26 +69,20 @@ const LoginForm = () => {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </div>
-                                <div className="flex w-64 mb-5"> 
-                                    <label className="flex items-center text-xs font-light">
-                                        <input type="checkbox" name="remember" className="mr-1"/>
-                                        Remember me
-                                    </label>
-                                </div>
                                 <button type="submit" className="border-2 border-violet-700 rounded-full px-12 py-2 inline-block font-semibold hover:bg-violet-700 hover:text-white">
-                                    Log in
+                                    Create account
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div className="w-2/5 bg-violet-700 text-white py-36 px-12">
-                    <h2 className="text-3xl font-bold mb-2">No Account?</h2>
+                    <h2 className="text-3xl font-bold mb-2">Have an account?</h2>
                     <div className="border-2 w-10 border-white inline-block mb-2"></div>
-                    <p className="mb-10">Fill in your details to sign up</p>
-                    <Link href="/signup">
+                    <p className="mb-10">Login here</p>
+                    <Link href="/login">
                         <p className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-black">
-                            Sign up
+                            Login
                         </p>
                     </Link>
                 </div>
@@ -75,4 +91,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm;
+export default SignupForm;
