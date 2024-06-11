@@ -109,10 +109,13 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex bg-black/70">
+    <header className="flex fixed top-0 w-full bg-black/70 z-10">
       <div className="mx-auto flex w-full justify-between px-4 py-5 text-sm bg-gray-950">
         {/* left side */}
-        <section ref={animationParent} className="flex items-center w-full gap-10">
+        <section
+          ref={animationParent}
+          className="flex items-center w-full gap-10"
+        >
           {/* logo */}
           <div className="text-left text-white font-bold text-base">
             Skill<span className="text-violet-700">Connect</span>
@@ -180,7 +183,7 @@ export default function Navbar() {
           />
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
