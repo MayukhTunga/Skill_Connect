@@ -19,8 +19,8 @@ const SignupForm = () => {
     }
     return (
         <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-            <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl overflow-hidden">
-                <div className="w-3/5 p-5 text-black">
+            <div className="bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
+                <div className="w-full md:w-3/5 p-5 text-black">
                     <div className="text-left font-bold">
                         Skill <span className="text-violet-700">Connect</span>
                     </div>
@@ -76,7 +76,7 @@ const SignupForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-2/5 bg-violet-700 text-white py-36 px-12">
+                <div className="w-full md:w-2/5 bg-violet-700 text-white py-36 px-12 flex flex-col items-center justify-center">
                     <h2 className="text-3xl font-bold mb-2">Have an account?</h2>
                     <div className="border-2 w-10 border-white inline-block mb-2"></div>
                     <p className="mb-10">Login here</p>
