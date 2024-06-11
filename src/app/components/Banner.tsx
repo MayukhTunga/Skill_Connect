@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const images = [
   "/images/image1.jpg",
@@ -25,9 +26,9 @@ export default function Banner() {
     <div className="relative flex rounded-lg items-center justify-center w-full h-96 mt-8">
       <button
         onClick={prevImage}
-        className="left-0 top-1/2 font-bold bg-slate-300   px-4 py-2 rounded-full text-purple-700 mx-4"
+        className="left-0 top-1/2 font-bold bg-slate-300 w-12 h-12 px-4 py-2 rounded-full text-purple-700 mx-4"
       >
-        {"<"}
+        <IoIosArrowBack />
       </button>
       <div className="relative w-full h-96">
         <Image
@@ -40,9 +41,9 @@ export default function Banner() {
       </div>
       <button
         onClick={nextImage}
-        className="right-0 top-1/2 font-bold bg-slate-300   px-4 py-2 rounded-full text-purple-700 mx-4"
+        className="right-0 top-1/2 font-bold bg-slate-300 w-12 h-12 px-4 py-2 rounded-full text-purple-700 mx-4"
       >
-        {">"}
+        <IoIosArrowForward />
       </button>
     </div>
   );

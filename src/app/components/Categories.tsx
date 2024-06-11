@@ -104,19 +104,12 @@ const CategoryLists: CategoryList[] = [
 
 export default function Categories() {
   return (
-    // <div>
-    // <div className="mt-4 gap-2 grid grid-cols-2 sm:grid-cols-4">
-    //   {CategoryLists.map((data, index) => (
-    //     <Cards key={index} title={data.title} img={data.img} />
-    //   ))}
-    // </div>
-    // </div>
     <div>
       <h1 className="text-white text-center text-4xl font-bold my-8 ">
         Top <span className="text-purple-600">Categories</span> in 2024
       </h1>
       <div className="flex items-start justify-center my-8">
-        <div className="mt-4 gap-24 grid grid-cols-2 sm:grid-cols-5">
+        <div className="mt-4 gap-24 grid md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {CategoryLists.map((data, index) => (
             <Cards
               key={index}
