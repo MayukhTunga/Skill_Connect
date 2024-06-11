@@ -12,7 +12,7 @@ const LoginForm = () => {
         e.preventDefault()
         const information = {email: email, password: password}
         setLoginData(information)
-        console.log(information)
+        //console.log(information)
     }
     return (
         <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
