@@ -1,6 +1,7 @@
 "use client";
 
-import { React, useState } from "react";
+import { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
@@ -109,11 +110,11 @@ export default function Navbar() {
 
   return (
     <div className="flex bg-black/70">
-      <div className="mx-auto flex w-full max-w-7xl justify-between px-4 py-5 text-sm ">
+      <div className="mx-auto flex w-full justify-between px-4 py-5 text-sm bg-gray-950">
         {/* left side */}
-        <section ref={animationParent} className="flex items-center gap-10">
+        <section ref={animationParent} className="flex items-center w-full gap-10">
           {/* logo */}
-          <div className="text-left font-bold text-base">
+          <div className="text-left text-white font-bold text-base">
             Skill<span className="text-violet-700">Connect</span>
           </div>
 
@@ -127,7 +128,7 @@ export default function Navbar() {
                 href={data.link ?? "#"}
                 className="relative group px-2 py-3 transition-all"
               >
-                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black">
+                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-white">
                   <span>{data.label}</span>
                   {data.children && (
                     <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
@@ -159,18 +160,18 @@ export default function Navbar() {
         </section>
 
         {/* right side data */}
-        <section className="hidden md:flex items-center gap-8">
-          <button className="h- fit text-neutral-400 transition-all hover:text-black/90">
+        <section className="hidden md:flex w-full items-center justify-end gap-8">
+          <button className="h- fit text-neutral-400 transition-all hover:text-white/90">
             Login
           </button>
-          <button className="h-fit rounded-xl border-2 border-neutral-400 px-4 py-2 text-neutral-400 transition-all hover:border-black hover:text-black/90">
+          <button className="h-fit rounded-xl border-2 border-neutral-400 px-4 py-2 text-neutral-400 transition-all hover:border-violet-700 hover:text-white/90">
             Register
           </button>
         </section>
 
         <div className="flex gap-4 justify-end">
           <IoSearchOutline
-            onClick={"#"}
+            //onClick={}
             className="cursor-pointer text-3xl md:hidden"
           />
           <FiMenu
