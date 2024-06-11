@@ -164,6 +164,18 @@ export default function Navbar() {
 
         {/* right side data */}
         <section className="hidden md:flex w-full items-center justify-end gap-8">
+          <label className="relative block">
+            <span className="sr-only">Search</span>
+            <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+              <IoSearchOutline className="h-5 w-5 text-slate-400" />
+            </span>
+            <input
+              className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Search"
+              type="text"
+              name="search"
+            />
+          </label>
           <button className="h- fit text-neutral-400 transition-all hover:text-white/90">
             Login
           </button>
@@ -173,10 +185,22 @@ export default function Navbar() {
         </section>
 
         <div className="flex gap-4 justify-end">
-          <IoSearchOutline
+          {/* <IoSearchOutline
             //onClick={}
             className="cursor-pointer text-3xl md:hidden text-white"
-          />
+          /> */}
+          <label className="relative block md:hidden">
+            <span className="sr-only">Search</span>
+            <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+              <IoSearchOutline className="h-5 w-5 text-slate-400" />
+            </span>
+            <input
+              className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Search"
+              type="text"
+              name="search"
+            />
+          </label>
           <FiMenu
             onClick={openSideMenu}
             className="cursor-pointer text-4xl md:hidden text-white"
@@ -189,7 +213,7 @@ export default function Navbar() {
 
 function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
   return (
-    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-end bg-black/60 md:hidden">
+    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-end bg-black/60 md:hidden z-10">
       <div className="h-full w-[65%] bg-white px-4 py-4">
         <section className="flex justify-end">
           <AiOutlineClose
