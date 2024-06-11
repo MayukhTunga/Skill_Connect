@@ -175,11 +175,11 @@ export default function Navbar() {
         <div className="flex gap-4 justify-end">
           <IoSearchOutline
             //onClick={}
-            className="cursor-pointer text-3xl md:hidden"
+            className="cursor-pointer text-3xl md:hidden text-white"
           />
           <FiMenu
             onClick={openSideMenu}
-            className="cursor-pointer text-4xl md:hidden"
+            className="cursor-pointer text-4xl md:hidden text-white"
           />
         </div>
       </div>

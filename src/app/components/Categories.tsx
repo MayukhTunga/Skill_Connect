@@ -1,56 +1,132 @@
 import React from "react";
-import Navbar from "./Navbar";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 // import Cards from "./Cards";
 
 type CategoryList = {
   title: string;
+  totalInstructors: number;
+  subCategories: string;
   img: string;
 };
 const CategoryLists: CategoryList[] = [
   {
-    title: "Orange",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Programming",
+    totalInstructors: 69,
+    subCategories: "Python, C++, Rust.........",
+    img: "/images/CourseImages/Python.jpg",
   },
   {
-    title: "Tangerine",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Web Development",
+    totalInstructors: 420,
+    subCategories: "HTML, CSS, JavaScript.........",
+    img: "/images/CourseImages/WebDevelopment.jpg",
   },
   {
-    title: "Raspberry",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Cloud Computing",
+    totalInstructors: 69,
+    subCategories: "AWS, Azure, GCP.........",
+    img: "/images/CourseImages/AWS.png",
   },
   {
-    title: "Lemon",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "JavaScript Frameworks",
+    totalInstructors: 420,
+    subCategories: "React, Angular, Vue.........",
+    img: "/images/CourseImages/React.jpg",
   },
   {
-    title: "Avocado",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Programming",
+    totalInstructors: 69,
+    subCategories: "Python, C++, Rust.........",
+    img: "/images/CourseImages/Python.jpg",
   },
   {
-    title: "Lemon 2",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Web Development",
+    totalInstructors: 420,
+    subCategories: "HTML, CSS, JavaScript.........",
+    img: "/images/CourseImages/WebDevelopment.jpg",
   },
   {
-    title: "Banana",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "Cloud Computing",
+    totalInstructors: 69,
+    subCategories: "AWS, Azure, GCP.........",
+    img: "/images/CourseImages/AWS.png",
   },
   {
-    title: "Watermelon",
-    img: "https://nextui.org/images/hero-card.jpeg",
+    title: "JavaScript Frameworks",
+    totalInstructors: 420,
+    subCategories: "React, Angular, Vue.........",
+    img: "/images/CourseImages/React.jpg",
+  },
+  {
+    title: "Programming",
+    totalInstructors: 69,
+    subCategories: "Python, C++, Rust.........",
+    img: "/images/CourseImages/Python.jpg",
+  },
+  {
+    title: "Web Development",
+    totalInstructors: 420,
+    subCategories: "HTML, CSS, JavaScript.........",
+    img: "/images/CourseImages/WebDevelopment.jpg",
+  },
+  {
+    title: "Cloud Computing",
+    totalInstructors: 69,
+    subCategories: "AWS, Azure, GCP.........",
+    img: "/images/CourseImages/AWS.png",
+  },
+  {
+    title: "JavaScript Frameworks",
+    totalInstructors: 420,
+    subCategories: "React, Angular, Vue.........",
+    img: "/images/CourseImages/React.jpg",
+  },
+  {
+    title: "Programming",
+    totalInstructors: 69,
+    subCategories: "Python, C++, Rust.........",
+    img: "/images/CourseImages/Python.jpg",
+  },
+  {
+    title: "Web Development",
+    totalInstructors: 420,
+    subCategories: "HTML, CSS, JavaScript.........",
+    img: "/images/CourseImages/WebDevelopment.jpg",
+  },
+  {
+    title: "Cloud Computing",
+    totalInstructors: 69,
+    subCategories: "AWS, Azure, GCP.........",
+    img: "/images/CourseImages/AWS.png",
   },
 ];
 
 export default function Categories() {
   return (
+    // <div>
+    // <div className="mt-4 gap-2 grid grid-cols-2 sm:grid-cols-4">
+    //   {CategoryLists.map((data, index) => (
+    //     <Cards key={index} title={data.title} img={data.img} />
+    //   ))}
+    // </div>
+    // </div>
     <div>
-      <Navbar />
-      <div className="mt-4 gap-2 grid grid-cols-2 sm:grid-cols-4">
-        {CategoryLists.map((data, index) => (
-          <Cards key={index} title={data.title} img={data.img} />
-        ))}
+      <h1 className="text-white text-center text-4xl font-bold my-8 ">
+        Top <span className="text-purple-600">Categories</span> in 2024
+      </h1>
+      <div className="flex items-start justify-center my-8">
+        <div className="mt-4 gap-24 grid grid-cols-2 sm:grid-cols-5">
+          {CategoryLists.map((data, index) => (
+            <Cards
+              key={index}
+              title={data.title}
+              totalInstructors={data.totalInstructors}
+              subCategories={data.subCategories}
+              img={data.img}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -59,25 +135,22 @@ export default function Categories() {
 function Cards(data: CategoryList) {
   return (
     <div className="flex justify-center items-center h-full">
-      <Card
-        shadow="sm"
-        // key={key}
-        // isPressable
-        // onPress={() => console.log("item pressed")}
-      >
-        <CardBody className="overflow-visible p-0">
+      <Card className="py-4 bg-gray-900 bg-opacity-66 p-4 rounded-xl border border-white text-white">
+        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+          <p className="text-tiny uppercase font-bold">{data.title}</p>
+          <small className="text-default-500">
+            {data.totalInstructors} Instructors
+          </small>
+          <h4 className="font-bold text-large">{data.subCategories}</h4>
+        </CardHeader>
+        <CardBody className="overflow-visible py-2">
           <Image
-            shadow="sm"
-            radius="lg"
-            width="40%"
-            alt={data.title}
-            className="w-full object-cover h-[140px]"
+            alt="Card background"
+            className="object-cover rounded-xl"
             src={data.img}
+            width={270}
           />
         </CardBody>
-        <CardFooter className="text-small justify-between">
-          <b>{data.title}</b>
-        </CardFooter>
       </Card>
     </div>
   );
