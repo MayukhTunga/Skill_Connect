@@ -136,7 +136,7 @@ export default function Navbar() {
                 </p>
                 {/* dropdown */}
                 {data.children && (
-                  <div className="absolute right-0 top-10 hidden w-auto flex-col gap-1 rounded-lg bg-white py-3 shadow-md transition-all group-hover:flex">
+                  <div className="absolute right-0 top-10 hidden w-auto flex-col gap-1 rounded-lg bg-white py-3  shadow-md transition-all group-hover:flex">
                     {data.children.map((child, ind) => (
                       <Link
                         key={ind}
