@@ -9,11 +9,12 @@ export default function Topniche() {
 
     return (
         <div>
-            <div className="flex items-start justify-center">
+            <h1 className="text-white text-4xl font-bold my-8 ">Top <span className="text-purple-600">Niches</span> in 2024</h1>
+            <div className="flex items-start justify-center my-8">
                 {niches.map((niche, index) => (
-                    <div key={index} className="bg-slate-600 rounded-lg px-12 py-4 mx-4 my-2">
-                        <div className="text-white font-bold text-2xl">{niche.title}</div>
-                        <div className="text-white font-medium text-sm">{niche.description}</div>
+                    <div key={index} className="bg-slate-200 rounded-lg px-12 py-4 mx-4 my-2 cursor-pointer ">
+                        <div className="text-purple-600 font-bold text-2xl hover:text-purple-700">{niche.title}</div>
+                        <div className="text-purple-600 font-medium text-sm hover:text-purple-700">{niche.description}</div>
                     </div>
                 ))}
             </div>
