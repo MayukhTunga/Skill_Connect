@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} ${
+          process.env.NODE_ENV == "development" ? "debug-screens" : ""
+        }`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
