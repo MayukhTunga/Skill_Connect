@@ -141,7 +141,7 @@ function Cards(data: CategoryList) {
         <CardBody className="overflow-visible py-2">
           <Image
             alt="Card background"
-            className="object-cover rounded-xl"
+            className="object-cover rounded-xl z-10"
             src={data.img}
             width={270}
           />

@@ -109,7 +109,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="flex fixed top-0 w-full bg-black/70 z-10">
+    <header className="flex fixed top-0 w-full bg-black/70 z-50">
       <div className="mx-auto flex w-full justify-between px-4 py-5 text-sm bg-gray-950">
         {/* left side */}
         <section
@@ -213,7 +213,7 @@ export default function Navbar() {
 
 function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
   return (
-    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-end bg-black/60 md:hidden z-10">
+    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-end bg-black/60 md:hidden z-50">
       <div className="h-full w-[65%] bg-white px-4 py-4">
         <section className="flex justify-end">
           <AiOutlineClose
