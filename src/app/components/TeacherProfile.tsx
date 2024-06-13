@@ -31,36 +31,42 @@ When I'm not coding or teaching, you can find me exploring the outdoors, playing
   };
 
   return (
-    <div className="max-w-4xl mx-auto  shadow-lg rounded-xl overflow-hidden mt-8 p-8 border-2">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-purple-700">{teacher.name}</h1>
-          <h2 className="text-xl text-white">{teacher.title}</h2>
-          <div className="mt-4">
-            <span className="block text-white font-bold">Total students</span>
-            <span className="block text-2xl font-bold text-purple-700">{teacher.stats.students}</span>
+    <div>
+      <div className="max-w-4xl mx-auto  shadow-lg rounded-xl overflow-hidden mt-8 p-8 border-2 bg-black">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-purple-700">{teacher.name}</h1>
+            <h2 className="text-xl text-white">{teacher.title}</h2>
+            <div className="mt-4">
+              <span className="block text-white font-bold">Total students</span>
+              <span className="block text-2xl font-bold text-purple-700">{teacher.stats.students}</span>
+            </div>
+            <div className="mt-2">
+              <span className="block text-white font-bold">Rating</span>
+              <span className="block text-2xl font-bold text-white">{teacher.stats.rating} <span className='text-yellow-500'>★</span></span>
+            </div>
+            <div className="mt-2">
+              <span className="block text-white font-bold">Reviews</span>
+              <span className="block text-2xl font-bold text-purple-700">{teacher.stats.reviews}</span>
+            </div>
           </div>
-          <div className="mt-2">
-            <span className="block text-white font-bold">Rating</span>
-            <span className="block text-2xl font-bold text-white">{teacher.stats.rating} <span className='text-yellow-500'>★</span></span>
-          </div>
-          <div className="mt-2">
-            <span className="block text-white font-bold">Reviews</span>
-            <span className="block text-2xl font-bold text-purple-700">{teacher.stats.reviews}</span>
+          <div className="flex-shrink-0">
+            <img className="h-32 w-32 rounded-full border-2" src={teacher.imageUrl} alt="Teacher profile picture" />
+            <div className="mt-4 flex flex-col">
+              <a href={teacher.social.website} className="mt-2  text-center font-medium text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">Website</a>
+              <a href={teacher.social.twitter} className="mt-2  text-center font-medium text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">Twitter</a>
+              <a href={teacher.social.linkedin} className="mt-2  text-center font-medium text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">LinkedIn</a>
+            </div>
           </div>
         </div>
-        <div className="flex-shrink-0">
-          <img className="h-32 w-32 rounded-full" src={teacher.imageUrl} alt="Teacher profile picture" />
-          <div className="mt-4 flex flex-col">
-            <a href={teacher.social.website} className="mt-2  text-center text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">Website</a>
-            <a href={teacher.social.twitter} className="mt-2  text-center text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">Twitter</a>
-            <a href={teacher.social.linkedin} className="mt-2  text-center text-purple-600 bg-slate-300 py-2 px-4 rounded-lg hover:bg-violet-700 hover:text-white">LinkedIn</a>
-          </div>
+        <div className="mt-8">
+          <h3 className="text-2xl font-bold text-white">About me</h3>
+          <p className="mt-4 text-white whitespace-pre-line">{teacher.bio}</p>
         </div>
       </div>
-      <div className="mt-8">
-        <h3 className="text-2xl font-bold text-white">About me</h3>
-        <p className="mt-4 text-white whitespace-pre-line">{teacher.bio}</p>
+      <h1 className='text-white text-3xl mt-8 font-bold'>My <span className='text-violet-600'>Courses</span></h1>
+      <div className='mx-auto py-96 bg-black shadow-lg rounded-xl overflow-hidden mt-8 p-8 border-2'>
+
       </div>
     </div>
   );

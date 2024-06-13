@@ -16,12 +16,12 @@ export default function Topniche() {
         {niches.map((niche, index) => (
           <div
             key={index}
-            className="bg-slate-200 rounded-lg px-12 py-4 mx-4 my-2 cursor-pointer hover:bg-white outline hover:outline-offset-2 hover:outline-purple-700"
+            className="bg-black rounded-lg px-12 py-4 mx-4 my-2 cursor-pointer outline hover:outline-offset-2 outline-purple-600"
           >
-            <div className="text-purple-600 font-bold text-2xl hover:text-purple-700">
+            <div className="text-white font-bold text-2xl">
               {niche.title}
             </div>
-            <div className="text-purple-600 font-medium text-sm hover:text-purple-700">
+            <div className="text-white font-medium text-sm">
               {niche.description}
             </div>
           </div>

@@ -45,7 +45,7 @@ const CoursesView = () => {
         {courses.map((course, index) => (
           <div
             key={index}
-            className="group p-4 border border-white rounded-lg shadow-md cursor-pointer hover:border-purple-500"
+            className="group p-4 border border-white rounded-lg shadow-md cursor-pointer hover:border-purple-500 bg-black"
           >
             <img
               src={course.image}
