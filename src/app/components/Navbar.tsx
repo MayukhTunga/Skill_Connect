@@ -32,7 +32,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     label: "Teach",
-    link: "#",
+    link: "/teachersignup",
   },
   {
     label: "Explore",
