@@ -126,20 +126,22 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-4 transition-all">
             {navItems.map((data, index) => (
-              <Link
+              <div
                 key={index}
-                href={data.link ?? "#"}
                 className="relative group px-2 py-3 transition-all"
               >
-                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-white">
+                <Link
+                  href={data.link ?? "#"}
+                  className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-white"
+                >
                   <span>{data.label}</span>
                   {data.children && (
                     <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
                   )}
-                </p>
+                </Link>
                 {/* dropdown */}
                 {data.children && (
-                  <div className="absolute right-0 top-10 hidden w-auto flex-col gap-1 rounded-lg bg-white py-3  shadow-md transition-all group-hover:flex">
+                  <div className="absolute right-0 top-10 hidden w-auto flex-col gap-1 rounded-lg bg-white py-3 shadow-md transition-all group-hover:flex">
                     {data.children.map((child, ind) => (
                       <Link
                         key={ind}
@@ -148,7 +150,7 @@ export default function Navbar() {
                       >
                         {/* logo */}
                         {child.icon && <child.icon />}
-                        {/* item  */}
+                        {/* item */}
                         <span className="whitespace-nowrap pl-3">
                           {child.label}
                         </span>
@@ -156,7 +158,7 @@ export default function Navbar() {
                     ))}
                   </div>
                 )}
-              </Link>
+              </div>
             ))}
           </div>
           {/* nav-items */}
@@ -256,13 +258,12 @@ function SingleNavItem(data: NavItem) {
   }
 
   return (
-    <Link
+    <div
       ref={animationParent}
       onClick={toggleItem}
-      href={data.link ?? "#"}
-      className="relative px-2 py-3 transition-all"
+      className="relative px-2 py-3 transition-all cursor-pointer"
     >
-      <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black">
+      <p className="flex items-center gap-2 text-neutral-400 group-hover:text-black">
         <span>{data.label}</span>
         {data.children && (
           <IoIosArrowDown
@@ -270,6 +271,12 @@ function SingleNavItem(data: NavItem) {
           />
         )}
       </p>
+      {/* Link wrapper for navigation */}
+      {data.link && (
+        <Link href={data.link ?? "#"} className="absolute inset-0 z-10">
+          <span className="sr-only">{data.label}</span>
+        </Link>
+      )}
       {/* dropdown */}
       {isItemOpen && data.children && (
         <div className="w-auto flex-col gap-1 rounded-lg bg-white py-3 transition-all">
@@ -277,16 +284,16 @@ function SingleNavItem(data: NavItem) {
             <Link
               key={ind}
               href={child.link ?? "#"}
-              className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-400 hover:text-black"
+              className="flex items-center py-1 pl-6 pr-8 text-neutral-400 hover:text-black"
             >
               {/* logo */}
               {child.icon && <child.icon />}
-              {/* item  */}
+              {/* item */}
               <span className="whitespace-nowrap pl-3">{child.label}</span>
             </Link>
           ))}
         </div>
       )}
-    </Link>
+    </div>
   );
 }
