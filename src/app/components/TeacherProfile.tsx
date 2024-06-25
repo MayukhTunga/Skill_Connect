@@ -65,8 +65,7 @@ When I'm not coding or teaching, you can find me exploring the outdoors, playing
         </div>
       </div>
       <h1 className='text-white text-3xl mt-8 font-bold'>My <span className='text-violet-600'>Courses</span></h1>
-      <div className='mx-auto py-96 bg-black shadow-lg rounded-xl overflow-hidden mt-8 p-8 border-2'>
-
+      <div className='mx-auto py-96 bg-black shadow-lg rounded-xl  mt-8 p-8 border-2'>
       </div>
     </div>
   );
