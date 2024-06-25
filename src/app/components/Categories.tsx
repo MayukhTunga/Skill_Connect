@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
-// import Cards from "./Cards";
-
 type CategoryList = {
   title: string;
   totalInstructors: number;
