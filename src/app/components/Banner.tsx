@@ -1,11 +1,12 @@
 "use client";
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const images = [
-  '/images/image1.jpg',
-  '/images/image2.jpg',
-  '/images/image3.jpg',
+  "/images/image1.jpg",
+  "/images/image2.jpg",
+  "/images/image3.jpg",
 ];
 
 export default function Banner() {
@@ -22,12 +23,12 @@ export default function Banner() {
   };
 
   return (
-    <div className="relative flex rounded-lg items-center justify-center w-full h-96 ">
+    <div className="relative flex rounded-lg items-center justify-center w-full h-96 mt-8">
       <button
         onClick={prevImage}
-        className="left-0 top-1/2 font-bold bg-slate-300   px-4 py-2 rounded-full text-purple-700 mx-4"
+        className="left-0 top-1/2 font-bold bg-slate-300 w-12 h-12 px-4 py-2 rounded-full text-purple-700 mx-4 hover:bg-white"
       >
-        {'<'}
+        <IoIosArrowBack />
       </button>
       <div className="relative w-full h-96">
         <Image
@@ -35,14 +36,14 @@ export default function Banner() {
           alt={`Banner ${currentIndex + 1}`}
           layout="fill"
           objectFit="cover"
-          className='rounded-lg'
+          className="rounded-lg"
         />
       </div>
       <button
         onClick={nextImage}
-        className="right-0 top-1/2 font-bold bg-slate-300   px-4 py-2 rounded-full text-purple-700 mx-4"
+        className="right-0 top-1/2 font-bold bg-slate-300 w-12 h-12 px-4 py-2 rounded-full text-purple-700 mx-4 hover:bg-white"
       >
-        {'>'}
+        <IoIosArrowForward />
       </button>
     </div>
   );
