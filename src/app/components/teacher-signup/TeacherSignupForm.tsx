@@ -11,7 +11,7 @@ const RegistrationForm = () => {
         yearOfCompletion: '',
         aboutme: '',
         education: '',
-        skills: []
+        skills: [{value:'', label:''}]
     });
 
 
@@ -43,7 +43,7 @@ const RegistrationForm = () => {
         console.log(formData);
     };
 
-    const handleSkillCreate = (inputValue: any) => {
+    const handleSkillCreate = (inputValue: string) => {
         const newSkill = { value: inputValue.toLowerCase(), label: inputValue };
         setSkillsOptions([...skillsOptions, newSkill]);
         setFormData({
