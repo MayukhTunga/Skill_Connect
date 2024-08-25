@@ -1,14 +1,19 @@
+"use client";
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import DBInstance from "@/utils/db/server";
-import Categories from "@/utils/models/categoriesModel";
+import { Categories } from "@/utils/models/categoriesModel";
 
 DBInstance();
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
     if (req.method === "GET") {
       const { current } = req.query;
-      const categoriesData = await fetchEvents(current);
+      const categoriesData = Categories;
 
       if (categoriesData.length > 0) {
         res.status(200).json({
@@ -25,11 +30,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-const fetchEvents = async (current) => {
+const fetchEvents = async (current?: string) => {
   try {
     const categories = await Categories.find();
+    console.log("done");
     return categories;
   } catch (err) {
+    console.log("notdone");
     throw err;
   }
 };

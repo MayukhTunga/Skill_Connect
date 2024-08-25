@@ -26,7 +26,9 @@ export default function Categories({ categoriesData }) {
 
 export async function getServerSideProps() {
   try {
+    console.log("😙reached");
     const response = await API.get("/api/categories");
+    console.log(response);
     const categoriesData = response.data.data;
     return {
       props: {
